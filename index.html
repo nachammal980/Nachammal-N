@@ -1,0 +1,855 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>N. Nachammal | AI & Data Science Student</title>
+
+    <meta name="description"
+          content="Portfolio of N. Nachammal, B.Tech Artificial Intelligence and Data Science Student.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 60px;
+            background: linear-gradient(135deg, #eff6ff, #ffffff);
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 span {
+            color: #2563eb;
+        }
+
+        .hero-text h2 {
+            font-size: 25px;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: #6b7280;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .secondary-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .profile-box {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3);
+            flex-shrink: 0;
+        }
+
+        .profile-inner {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .about-card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #2563eb;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
+        }
+
+        .education-card h3 {
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .percentage {
+            display: inline-block;
+            margin-top: 12px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            color: #2563eb;
+        }
+
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .list-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .list-card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .list-card ul {
+            list-style: none;
+        }
+
+        .list-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .list-card li:last-child {
+            border-bottom: none;
+        }
+
+        .project-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .project-card h3 {
+            font-size: 25px;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .cert {
+            background: white;
+            padding: 18px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .cert::before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .career {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+        }
+
+        .career .section-title h2,
+        .career .section-title p {
+            color: white;
+        }
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .career-card {
+            background: rgba(255,255,255,0.12);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .career-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            background: #111827;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-3px);
+            background: #2563eb;
+        }
+
+        .contact-box {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            font-size: 17px;
+        }
+
+        .contact-item a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text h2 {
+                font-size: 21px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile-box {
+                width: 220px;
+                height: 220px;
+            }
+
+            .profile-inner {
+                width: 195px;
+                height: 195px;
+                font-size: 55px;
+            }
+
+            .about-content,
+            .skills-grid,
+            .list-grid,
+            .career-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Nachammal</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-container">
+
+        <div class="hero-text">
+            <h1>Hi, I'm <span>N. Nachammal</span></h1>
+
+            <h2>B.Tech Artificial Intelligence & Data Science Student</h2>
+
+            <p>
+                I am passionate about Artificial Intelligence, Data Science
+                and emerging technologies. I enjoy learning new skills,
+                solving problems and applying technology to real-world challenges.
+            </p>
+
+            <div class="buttons">
+                <a href="#about" class="btn primary-btn">
+                    Explore My Portfolio
+                </a>
+
+                <a href="mailto:nachammal980@gmail.com"
+                   class="btn secondary-btn">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-box">
+            <div class="profile-inner">
+                NN
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Get to know me</p>
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-card">
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am Nachammal, a B.Tech Artificial Intelligence and
+                    Data Science student at NPR College of Engineering
+                    and Technology.
+                </p>
+
+                <br>
+
+                <p>
+                    I am interested in Python, C programming, HTML,
+                    Artificial Intelligence, Data Science and emerging
+                    technologies.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>Career Objective</h3>
+
+                <p>
+                    To develop my technical and problem-solving skills
+                    and build a successful career in the field of
+                    Artificial Intelligence and Data Science.
+                </p>
+
+                <br>
+
+                <p>
+                    My goal is to continuously improve my knowledge
+                    and contribute to real-world technology projects.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Education</h2>
+            <p>My academic journey</p>
+        </div>
+
+        <div class="education-card">
+            <h3>B.Tech – Artificial Intelligence and Data Science</h3>
+            <p>NPR College of Engineering and Technology</p>
+            <p>CGPA: <strong>9.20 / 10</strong></p>
+        </div>
+
+        <div class="education-card">
+            <h3>Higher Secondary – 12th</h3>
+            <p>
+                Government Higher Secondary School, Sevalpatty
+            </p>
+            <span class="percentage">84.5%</span>
+        </div>
+
+        <div class="education-card">
+            <h3>SSLC – 10th</h3>
+            <p>
+                Government Higher Secondary School,
+                Kanjanayakkanpatty
+            </p>
+            <span class="percentage">87.4%</span>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+            <p>Technologies and tools I am learning</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Python</h3>
+                <p>Basics</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>C Programming</h3>
+                <p>Basics</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>HTML</h3>
+                <p>Basics</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>MS Word</h3>
+                <p>Basic Knowledge</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>PowerPoint</h3>
+                <p>Basic Knowledge</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Excel</h3>
+                <p>Basic Knowledge</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Soft Skills</h2>
+            <p>My strengths and interpersonal skills</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Communication</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Teamwork</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Problem Solving</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Time Management</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Self Motivation</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon"></div>
+                <h3>Responsibility</h3>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Courses & Learning</h2>
+            <p>Areas I am exploring</p>
+        </div>
+
+        <div class="list-grid">
+
+            <div class="list-card">
+                <h3>Courses</h3>
+
+                <ul>
+                    <li> Cloud Computing</li>
+                    <li>Artificial Intelligence</li>
+                    <li> Machine Learning</li>
+                    <li>Python</li>
+                    <li>Data Science</li>
+                </ul>
+            </div>
+
+            <div class="list-card">
+                <h3>Currently Learning</h3>
+
+                <ul>
+                    <li>Python</li>
+                    <li>C Programming</li>
+                    <li>HTML</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Data Science</li>
+                    <li>Data Structures</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Projects</h2>
+            <p>My academic and learning projects</p>
+        </div>
+
+        <div class="project-card">
+
+            <h3>Machine Modeling</h3>
+
+            <p>
+                Currently working and learning through academic
+                projects related to Machine Learning and Data Science.
+            </p>
+
+            <br>
+
+            <p>
+                Project Status: <strong>Ongoing</strong>
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section id="certifications">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Certifications</h2>
+            <p>Courses and certifications I have completed</p>
+        </div>
+
+        <div class="cert-grid">
+
+            <div class="cert">AI for Business Professionals</div>
+            <div class="cert">Critical Thinking in the AI Era</div>
+            <div class="cert">Data Science and Analytics</div>
+            <div class="cert">Introduction to Cloud</div>
+            <div class="cert">Python for Data Science</div>
+            <div class="cert">Prompt Engineering</div>
+            <div class="cert">Generative AI and Prompt Engineering</div>
+            <div class="cert">Talent Acquisition Quiz</div>
+
+        </div>
+    </div>
+</section>
+
+<section class="career">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Career Goals</h2>
+            <p>My vision for the future</p>
+        </div>
+
+        <div class="career-grid">
+
+            <div class="career-card">
+                <h3>Short-Term Goal</h3>
+
+                <p>
+                    Complete my B.Tech studies successfully and
+                    continuously improve my technical skills.
+                </p>
+            </div>
+
+            <div class="career-card">
+                <h3>Long-Term Goal</h3>
+
+                <p>
+                    Build a successful career in Artificial Intelligence
+                    and Data Science and contribute to innovative
+                    technology projects.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact Me</h2>
+            <p>Let's connect</p>
+        </div>
+
+        <div class="contact-box">
+
+            <div class="contact-item">
+                📧 Email:
+                <a href="mailto:nachammal980@gmail.com">
+                    nachammal980@gmail.com
+                </a>
+            </div>
+
+            <div class="contact-item">
+                LinkedIn:
+                <a href="#" target="_blank">
+                    My LinkedIn Profile
+                </a>
+            </div>
+
+            <div class="contact-item">
+                💻 GitHub:
+                <a href="#" target="_blank">
+                    My GitHub Profile
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>
+        &copy; 2026 N. Nachammal. All Rights Reserved.
+    </p>
+</footer>
+
+</body>
+</html>
